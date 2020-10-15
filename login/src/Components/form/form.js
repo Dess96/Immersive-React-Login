@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './form.css';
 import Input from '../input/input';
-import Button from '../button/button';
 
 class Form extends Component {
     render() {
@@ -10,7 +9,6 @@ class Form extends Component {
                 <h1>Login</h1>
                 <Input type={'text'} placeholder={'Username'}/>
                 <Input type={'password'} placeholder={'Password'}/>
-                <Button title={'Login'}/>
             </form>
         );
     }
