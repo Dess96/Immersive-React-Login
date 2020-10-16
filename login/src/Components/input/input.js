@@ -10,7 +10,7 @@ class Input extends Component {
         let {type} = this.props;
         let {placeholder} = this.props;
          return (
-            <input type={type} placeholder={placeholder}/>
+            <input type={type} placeholder={placeholder}></input>
         );
     }
 }
