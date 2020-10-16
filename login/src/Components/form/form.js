@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './form.css';
 import Cookies from 'js-cookie';
+import State from '../state/state';
 
 import {
     BrowserRouter as Router,
@@ -17,23 +18,29 @@ class Form extends Component {
     async getData() {
         let user = document.getElementById('inp1');
         let pass = document.getElementById('inp2');
+        let err = document.getElementById('error');
         let response = await fetch(`https://bootcamp-users.herokuapp.com/?email=${user.value}&password=${pass.value}`);
         let data = await response.json();
-        if(data.status == 200) {
+        if(data.status === 200) {
             Cookies.set('token', data.user.token);
+        } else {
+            err.textContent = 'Oops! Login error :(';
         }
     }
 
     render() {
         return (
-            <form className="box">
+            <div className="box">
                 <h1>Login</h1>
-                <input id="inp1" type="text" placeholder="Username"></input>
-                <input id="inp2" type="text" placeholder="Password"></input>
+                <div className="inputDiv">
+                    Username<input id="inp1" type="text" placeholder="Username"></input>
+                    Password<input id="inp2" type="text" placeholder="Password"></input>
+                </div>
                 <button onClick={this.getData}>
-                <Link to="/home">Login</Link>
+                <Link to="/home" style={{textDecoration: 'none', color: '#ffffff'}}>Login</Link>
                 </button>
-            </form>
+                <span id="error"></span>
+            </div>
         );
     }
 }

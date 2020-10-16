@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "./home.css";
 import Cookies from 'js-cookie';
-import Logout from '../../Components/logout/logout';
+import Messsage from '../../Components/message/message';
 
 import {
   BrowserRouter as Router,
-  Link,
   useHistory
 } from "react-router-dom";
 
@@ -20,7 +19,8 @@ function Home() {
     
     return (
         <div>
-          <Logout />
+          <Messsage />
+          
         </div>
     );
 }

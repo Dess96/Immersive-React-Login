@@ -19,7 +19,7 @@ class Logout extends Component {
 
     render() {
          return (
-            <button onClick={this.cleanData}><Link to="/">Logout</Link></button>
+            <button onClick={this.cleanData}><Link to="/" style={{textDecoration: 'none', color: '#ffffff'}}>Logout</Link></button>
         );
     }
 }
