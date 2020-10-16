@@ -3,10 +3,6 @@ import './message.css';
 import Logout from '../logout/logout';
 
 class Message extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="containerM">
